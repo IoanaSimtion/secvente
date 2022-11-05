@@ -1,7 +1,7 @@
 #include "sol.h"
-#include "corectare.h"
+#include "corectareaTemei.h"
 
 int main()
 {
-	rezolvare();
+	rezolvareProblema();
 }
