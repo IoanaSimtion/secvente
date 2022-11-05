@@ -544,3 +544,30 @@ void citireVector(int v[], int& d) {
 		f >> v[i];
 	}
 }
+
+//algoritm secvente:
+
+void secvente(int v[], int d, int& st, int& dr) {
+	
+
+	int sMax = -1;
+
+	int s = -1;
+	int start;
+
+	for (int i = 0; i < d; i++) {
+
+		if (s < 0) {
+			s = 0;
+			start = i;
+		}
+		s += v[i];
+		if (s > sMax) {
+			sMax = s;
+			st = start;
+			dr = i;
+		}
+	}
+	cout << sMax << endl;
+
+}
