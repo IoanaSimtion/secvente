@@ -1,7 +1,7 @@
-
-#include <iostream>
+#include "sol.h"
+#include "corectare.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	rezolvare();
 }
