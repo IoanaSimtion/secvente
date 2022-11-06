@@ -571,3 +571,40 @@ void secvente(int v[], int d, int& st, int& dr) {
 	cout << sMax << endl;
 
 }
+
+void citireVect(int v[], int& d) {
+	ifstream f("citire.txt");
+	f >> d;
+	for (int i = 0; i < d; i++) {
+		f >> v[i];
+	}
+}
+
+//todo functie ce returneaza oglinditul unui numar
+
+int oglindit(int numar) {
+	int ogl = 0;
+	while (numar) {
+		ogl = ogl * 10 + numar % 10;
+		numar/= 10;
+	}
+	return ogl;
+}
+
+//todo functie ce determina cea mai lunga secventa de elemente prime consecutive, ale caror oglindire sunt tot nr prime
+
+void maxSecvPrim(int v[], int n, int& st, int& dr) {
+	st = 1, dr = 0;
+	for (int i = 0; i < n; i++) {
+		if (prim(v[i]) && prim(oglindit(v[i]))) {
+			int j = i;
+			while (j + 1 < n && (prim(v[j + 1]) && prim(oglindit(v[j + 1])))) {
+				j++;
+			}
+			if (j - i + 1 > dr - st + 1) {
+				st = i, dr = j;
+			}
+			i = j;
+		}
+	}
+}
