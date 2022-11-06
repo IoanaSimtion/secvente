@@ -44,3 +44,14 @@ void sol145() {
 	citireVect4(x, n, y, m);
 	cout << esteSubsir(x, n, y, m);
 }
+
+//146. sa se determine panta de lungime maxima
+
+void sol146() {
+	int v[100], n, st, dr;
+	citireVect5(v, n);
+	pantaMax(v, n, st, dr);
+	for (int i = st; i <= dr; i++) {
+		cout << v[i] << ' ';
+	}
+}

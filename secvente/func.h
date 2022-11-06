@@ -697,3 +697,28 @@ bool esteSubsir(int x[], int n, int y[], int m) {
 	}
 	return false;
 }
+
+void citireVect5(int v[], int& d) {
+	ifstream f("citire5.txt");
+	f >> d;
+	for (int i = 0; i < d; i++) {
+		f >> v[i];
+	}
+}
+
+//todo functie ce determina panta de lungime maxima
+
+void pantaMax(int v[], int d, int& st, int& dr) {
+	st = 1, dr = 0;
+	for (int i = 0; i < d - 1; i++) {
+		if (v[i] == v[i + 1] - 1) {
+			int j = i;
+			while (j + 1 < d && v[j] == v[j + 1] - 1) {
+				j++;
+			}
+			if (j - i + 1 > dr - st + 1) {
+				st = i, dr = j;
+			}
+		}
+	}
+}
