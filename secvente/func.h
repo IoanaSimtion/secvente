@@ -784,3 +784,23 @@ void secvMaxCifreDistincte(int v[], int d, int& st, int& dr) {
 		}
 	}
 }
+
+//todo functie ce determina secventa max pt care suma elementelor se divide cu n
+
+void secvMaxSumaDivizibila(int v[], int d, int& st, int& dr, int n) {
+	st = 1, dr = 0;
+	for (int i = 0; i < d; i++) {
+		int suma = 0;
+		if ((suma + v[i]) % n == 0) {
+			suma = suma + v[i];
+			int j = i;
+			while (j + 1 < d && (suma + v[j + 1]) % n) {
+				j++;
+			}
+			if (j - i + 1 > dr - st + 1) {
+				st = i, dr = j;
+			}
+			i = j;
+		}
+	}
+}

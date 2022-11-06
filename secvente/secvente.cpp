@@ -13,6 +13,14 @@ int main()
 	//sol145();
 	//sol146();
 	//cout << cifreDistincte(112353);
-	sol148();
+	//sol148();
+	sol149();
+
+
+
+
+
+
+
 
 }

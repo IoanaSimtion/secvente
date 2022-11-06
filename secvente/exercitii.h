@@ -66,3 +66,14 @@ void sol148() {
 		cout << v[i] << ' ';
 	}
 }
+
+//149. secventa max pt care suma elementelor se divide cu n
+
+void sol149() {
+	int v[100], d, n=2, st, dr;
+	citireVect6(v, d);
+	secvMaxSumaDivizibila(v, d, st, dr, n);
+	for (int i = st; i <= dr; i++) {
+		cout << v[i] << ' ';
+	}
+}
