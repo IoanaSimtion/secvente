@@ -9,8 +9,8 @@ int main()
 	//cout << oglindit(13453);
 	//sol142();
 	//sol143();
-	sol144();
-
+	//sol144();
+	sol145();
 
 
 }

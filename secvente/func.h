@@ -659,10 +659,41 @@ void secvMaxAcelasiNumar(int v[], int d, int& st, int& dr) {
 		}
 	}
 }
+
 void citireVect3(int v[], int& d) {
 	ifstream f("citire3.txt");
 	f >> d;
 	for (int i = 0; i < d; i++) {
 		f >> v[i];
 	}
+}
+
+void citireVect4(int a[], int& n, int b[], int& m) {
+	ifstream f("citire4.txt");
+	f >> n;
+	for (int i = 0; i < n; i++) {
+		f >> a[i];
+	}
+	f >> m;
+	for (int i = 0; i < m; i++) {
+		f >> b[i];
+	}
+}
+
+//todo functie ce verifica daca y este subsir al lui x
+
+bool esteSubsir(int x[], int n, int y[], int m) {
+	for (int i = 0; i < n; i++) {
+		int j = 0;
+		if (x[i] == y[j]) {
+			while (x[i + 1] == y[j + 1]) {
+				i++;
+				j++;
+			}
+			if (j == m - 1 ) {
+				return true;
+			}
+		}
+	}
+	return false;
 }

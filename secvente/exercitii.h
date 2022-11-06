@@ -35,3 +35,12 @@ void sol144() {
 		cout << v[i] << ' ';
 	}
 }
+
+//145. sa se decida daca y este subsir al lui x
+//(daca exista un nr k ai xk=y0, xk+1=y1 ...)
+
+void sol145() {
+	int x[100], n, y[100], m;
+	citireVect4(x, n, y, m);
+	cout << esteSubsir(x, n, y, m);
+}
