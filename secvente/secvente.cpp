@@ -8,8 +8,8 @@ int main()
 	//rezolvareProblema();
 	//cout << oglindit(13453);
 	//sol142();
-	sol143();
-
+	//sol143();
+	sol144();
 
 
 

@@ -644,3 +644,25 @@ void secvMaxPalindrom(int v[], int n, int& st, int& dr) {
 		}
 	}
 }
+
+//todo functie ce determina secventa de lungime maxima care incepe si se sfarseste cu acelasi numar
+
+void secvMaxAcelasiNumar(int v[], int d, int& st, int& dr) {
+	st = 1, dr = 0;
+	for (int i = 0; i < d; i++) {
+		int j = d;
+		while (i < j && v[i] != v[j]) {
+			j--;
+		}
+		if (j - i + 1 > dr - st + 1) {
+			st = i, dr = j;
+		}
+	}
+}
+void citireVect3(int v[], int& d) {
+	ifstream f("citire3.txt");
+	f >> d;
+	for (int i = 0; i < d; i++) {
+		f >> v[i];
+	}
+}

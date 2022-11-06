@@ -23,3 +23,15 @@ void sol143() {
 		cout << v[i] << ' ';
 	}
 }
+
+//144. sa se afiseze secventa de lungime maxima
+//care incepe si se sfarseste cu acelasi numar
+
+void sol144() {
+	int v[100], n, st, dr;
+	citireVect3(v, n);
+	secvMaxAcelasiNumar(v, n, st, dr);
+	for (int i = st; i <= dr; i++) {
+		cout << v[i] << ' ';
+	}
+}
