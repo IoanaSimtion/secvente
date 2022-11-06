@@ -11,6 +11,8 @@ int main()
 	//sol143();
 	//sol144();
 	//sol145();
-	sol146();
+	//sol146();
+	//cout << cifreDistincte(112353);
+	sol148();
 
 }

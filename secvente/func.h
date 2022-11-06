@@ -722,3 +722,65 @@ void pantaMax(int v[], int d, int& st, int& dr) {
 		}
 	}
 }
+
+void citireVect6(int v[], int& d) {
+	ifstream f("citire6.txt");
+	f >> d;
+	for (int i = 0; i < d; i++) {
+		f >> v[i];
+	}
+}
+
+//todo functie ce determina frecventa cifrelor unui numar
+
+void frecventaCifre(int fr[], int numar) {
+	while (numar) {
+		fr[numar % 10]++;
+		numar /= 10;
+	}
+}
+
+//todo functie ce returneaza nr de cifre distincte dintr un numar
+
+int cifreDistincte(int numar) {
+	int fr[100]{}, ct = 0;
+	frecventaCifre(fr, numar);
+	while (numar) {
+		if (fr[numar % 10] >= 1) {
+			ct++;
+			while (fr[numar % 10]) {
+				fr[numar % 10]--;
+			}
+		}
+		numar /= 10;
+	}
+	return ct;
+}
+
+//todo functie ce returneaza numarul de cifre al unui numar
+
+int numarCifre(int numar) {
+	int ct = 0;
+	while (numar) {
+		numar /= 10;
+		ct++;
+	}
+	return ct;
+}
+
+//todo functie ce determina secventa maxima in care fiecare componenta are acelasi numar de cifre distincte
+
+void secvMaxCifreDistincte(int v[], int d, int& st, int& dr) {
+	st = 1, dr = 0;
+	for (int i = 0; i < d - 1; i++) {
+		if (cifreDistincte(v[i]) == cifreDistincte(v[i + 1])) {
+			int j = i + 1;
+			while (j + 1 < d && cifreDistincte(v[j]) == cifreDistincte(v[j + 1])) {
+				j++;
+			}
+			if (j - i + 1 > dr - st + 1) {
+				st = i, dr = j;
+			}
+		}
+	}
+}

@@ -55,3 +55,14 @@ void sol146() {
 		cout << v[i] << ' ';
 	}
 }
+
+//148. secventa maxima in care fiecare componenta are acelasi numar de cifre distincte
+
+void sol148() {
+	int v[100], n, st, dr;
+	citireVect6(v, n);
+	secvMaxCifreDistincte(v, n, st, dr);
+	for (int i = st; i <= dr; i++) {
+		cout << v[i] << ' ';
+	}
+}
