@@ -608,3 +608,39 @@ void maxSecvPrim(int v[], int n, int& st, int& dr) {
 		}
 	}
 }
+
+void citireVect2(int v[], int& d) {
+	ifstream f("citire2.txt");
+	f >> d;
+	for (int i = 0; i < d; i++) {
+		f >> v[i];
+	}
+}
+
+//todo functie ce verifica daca o secventa este palindromica
+
+bool palindrom(int v[], int d, int poz, int poz2) {
+	int i = poz, j = poz2;
+	while (i < j) {
+		if (v[i] != v[j]) {
+			return false;
+		}
+		i++, j--;
+	}
+	return true;
+}
+
+//todo functie ce determina secventa palindromica de lungime maxima
+
+void secvMaxPalindrom(int v[], int n, int& st, int& dr) {
+	st = 1, dr = 0;
+	for (int i = 0; i < n; i++) {
+		int j = n;
+		while (i < j && !palindrom(v, n, i, j)) {
+			j--;
+		}
+		if (j - i + 1 > dr - st + 1) {
+			st = i, dr = j;
+		}
+	}
+}
